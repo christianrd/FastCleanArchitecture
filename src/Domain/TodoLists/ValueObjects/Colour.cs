@@ -1,7 +1,7 @@
 ﻿using FastCleanArchitecture.Domain.Common;
 using FastCleanArchitecture.Domain.Exceptions;
 
-namespace FastCleanArchitecture.Domain.TodoList.ValueObjects;
+namespace FastCleanArchitecture.Domain.TodoLists.ValueObjects;
 
 public class Colour(string code) : ValueObject
 {

@@ -1,0 +1,82 @@
+{
+  "$schema": "http://json.schemastore.org/template",
+  "author": "Cristian D. Rodriguez V.",
+  "classifications": [
+    "Web",
+    "API",
+    "Clean Architecture"
+  ],
+  "name": "Fast Clean Architecture Solution",
+  "defaultName": "CompanyName.SolutionName",
+  "description": "A Clean Architecture Solution Template for creating a API Rest with .Net",
+  "identity": "Fast.Clean.Architecture.Solution.CSharp",
+  "groupIdentity": "Fast.Clean.Architecture.Solution",
+  "shortName": "fast-ca-sln",
+  "tags": {
+    "language": "C#",
+    "type": "project"
+  },
+  "sourceName": "FastCleanArchitecture",
+  "preferNameDirectory": true,
+  "symbols": {
+    "UseSQLite": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Whether to use SQLite instead of LocalDB."
+    },
+    "UseLocalDB": {
+      "type": "computed",
+      "value": "(!UseSQLite)"
+    }
+  },
+  "sources": [
+    {
+      "source": "./",
+      "target": "./",
+      "exclude": [
+        ".template.config/**/*",
+        "templates/**/*",
+        "**/*.filelist",
+        "**/*.user",
+        "**/*.lock.json",
+        "*.nuspec",
+        "**/[Bb]in/**",
+        "**/[Oo]bj/**",
+        ".vs/**/*",
+        ".idea/**/*",
+        "**/.git/**",
+        "**/azure-pipelines.yml",
+        "README.md"
+      ],
+      "rename": {
+        "README-template.md": "README.md"
+      },
+      "modifiers": [
+        {
+          "condition": "(UseLocalDB)",
+          "exclude": [
+            "src/Infrastructure/Data/SQLite/**",
+            "src/API/appsettings.SQLite.json",
+            "src/API/app.db",
+            "tests/Application.FunctionalTests/SqliteTestDatabase.cs"
+          ]
+        },
+        {
+          "condition": "(UseSQLite)",
+          "exclude": [
+            "src/Infrastructure/Data/Migrations/**",
+            "src/API/appsettings.json",
+            "tests/Application.FunctionalTests/SqlServerTestDatabase.cs",
+            "tests/Application.FunctionalTests/TestcontainersTestDatabase.cs"
+          ],
+          "rename": {
+            "src/Infrastructure/Data/SQLite/": "src/Infrastructure/Data/Migrations/",
+            "appsettings.SQLite.json": "appsettings.json",
+            "TestDatabase.Sqlite.cs": "TestDatabase.cs"
+          }
+        }
+      ]
+    }
+  ]
+}
