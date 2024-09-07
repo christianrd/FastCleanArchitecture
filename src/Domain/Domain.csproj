@@ -4,14 +4,6 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <RepositoryUrl>https://github.com/christianrd/FastCleanArchitecture</RepositoryUrl>
-	<CompanyName>Fast Clean Architecture</CompanyName>
-	<Company>$(CompanyName)</Company>
-    <RootNamespace>$(CompanyName.Replace(" ", "")).$(MSBuildProjectName.Replace(" ", ""))</RootNamespace>
-	<AssemblyName>$(CompanyName.Replace(" ", "")).$(MSBuildProjectName.Replace(" ", ""))</AssemblyName>
-	<Authors>Cristian D. Rodríguez V.</Authors>
-	<NuspecFile>.\..\..\FastCleanArchitecture.nuspec</NuspecFile>
-	<NuspecProperties>version=$(PackageVersion)</NuspecProperties>
   </PropertyGroup>
 
   <ItemGroup>
