@@ -1,4 +1,6 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using FastCleanArchitecture.Application.Common.Behaviors;
+using FluentValidation;
+using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics.CodeAnalysis;
 
 namespace FastCleanArchitecture.Application;
@@ -11,8 +13,11 @@ public static class DependencyInjection
         services.AddMediatR(conf =>
         {
             conf.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
+            conf.AddOpenBehavior(typeof(LoggingBehavior<,>));
+            conf.AddOpenBehavior(typeof(ValidationBehavior<,>));
         });
 
+        services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
         return services;
     }
 }
