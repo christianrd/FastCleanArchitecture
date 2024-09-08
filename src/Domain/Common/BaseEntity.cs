@@ -8,7 +8,7 @@ public abstract class BaseEntity
 
     public Guid Id { get; init; }
 
-    public IReadOnlyList<IDomainEvent> DomainEvents => _domainEvents.AsReadOnly();
+    public IReadOnlyList<IDomainEvent> GetDomainEvents() => _domainEvents.AsReadOnly();
 
     public void AddDomainEvent(IDomainEvent domainEvent) => _domainEvents.Add(domainEvent);
 
