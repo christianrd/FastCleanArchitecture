@@ -1,4 +1,4 @@
-﻿namespace FastCleanArchitecture.Domain.TodoList;
+﻿namespace FastCleanArchitecture.Domain.TodoLists;
 
 public interface ITodoListRepository
 {

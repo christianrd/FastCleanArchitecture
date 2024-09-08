@@ -4,14 +4,10 @@
     <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-    <RepositoryUrl>https://github.com/christianrd/FastCleanArchitecture</RepositoryUrl>
-	<CompanyName>Fast Clean Architecture</CompanyName>
-	<Company>$(CompanyName)</Company>
-    <RootNamespace>$(CompanyName.Replace(" ", "")).$(MSBuildProjectName.Replace(" ", ""))</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentResults" Version="3.16.0" />
     <PackageReference Include="MediatR.Contracts" Version="2.0.1" />
   </ItemGroup>
 
