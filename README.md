@@ -6,7 +6,7 @@
 The purpose of this template is to offer a simple and effective solution for building enterprise applications 
 by harnessing the capabilities of Clean Architecture and ASP.NET Core. 
 With this template, you can easily set up a Web API following Clean Architecture and Domain Drive Design principles. 
-Starting is quick and easy—just install the .NET template (detailed instructions provided below).
+Starting is quick and easyï¿½just install the .NET template (detailed instructions provided below).
 
 
 ## Getting Started
@@ -16,7 +16,7 @@ The following prerequisites are required to build and run the solution:
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (latest version)
 - [Node.js](https://nodejs.org/) (latest LTS, only required if you are using Angular or React)
 
-The easiest way to get started is to install the [.NET template](https://www.nuget.org/packages/Clean.Architecture.Solution.Template):
+The easiest way to get started is to install the [.NET template](https://www.nuget.org/packages/Fast.Clean.Architecture.Solution.Template):
 ```
 dotnet new install Clean.Architecture.Solution.Template::8.0.8
 ```
