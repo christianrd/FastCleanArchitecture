@@ -1,6 +1,6 @@
-using FastCleanArchitecture.Application.Common.Interfaces;
+using FastCleanArchitecture.Application.Common.Messaging;
 
-namespace FastCleanArchitecture.Application.FeatureName.Commands.CleanArchitectureUseCase;
+namespace FastCleanArchitecture.Application.FeatureName.Commands.FastCleanArchitectureUseCase;
 
 public record FastCleanArchitectureUseCaseCommand : ICommand<object>
 {

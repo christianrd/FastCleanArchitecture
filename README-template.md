@@ -11,7 +11,7 @@ Run `dotnet build -tl` to build the solution.
 To run the web application:
 
 ```bash
-cd .\src\Web\
+cd .\src\API\
 dotnet watch run
 ```
 
@@ -30,16 +30,16 @@ Start in the `.\src\Application\` folder.
 Create a new command:
 
 ```
-dotnet new fca-usecase --name CreateTodoList --feature-name TodoLists --usecase-type command --return-type int
+dotnet new fast-ca-usecase --name CreateTodoList --feature-name TodoLists --usecase-type command --return-type int
 ```
 
 Create a new query:
 
 ```
-dotnet new fca-usecase -n GetTodos -fn TodoLists -ut query -rt TodosVm
+dotnet new fast-ca-usecase -n GetTodos -fn TodoLists -ut query -rt TodosVm
 ```
 
-If you encounter the error *"No templates or subcommands found matching: 'fca-usecase'."*, install the template and try again:
+If you encounter the error *"No templates or subcommands found matching: 'fast-ca-usecase'."*, install the template and try again:
 
 ```bash
 dotnet new install Fast.Clean.Architecture.Solution.Template::fcaPackageVersion
