@@ -11,13 +11,14 @@
 			A Clean Architecture Solution Template for creating apps using Web API only with DotNet.
 		</summary>
 
-		<projectUrl>https://dev.azure.com/evopoint/9c05739b-56f2-480e-b95e-46cc18bdc5d4/_git/694fd6a0-5a06-4606-92c9-1455076081a3</projectUrl>
-		<repository type="git" url="https://dev.azure.com/evopoint/9c05739b-56f2-480e-b95e-46cc18bdc5d4/_git/694fd6a0-5a06-4606-92c9-1455076081a3" branch="main" />
+		<projectUrl>https://github.com/christianrd/FastCleanArchitecture</projectUrl>
+		<repository type="git" url="https://github.com/christianrd/FastCleanArchitecture.git" branch="main" />
 
-		<license type="expression">Unlicenced</license>
+		<license type="expression">MIT</license>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
 		<tags>fast-clean-architecture project template csharp dotnet</tags>
 		<icon>icon.png</icon>
+		<readme>README.md</readme>
 
 		<packageTypes>
 			<packageType name="Template" />
