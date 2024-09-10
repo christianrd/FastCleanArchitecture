@@ -14,9 +14,9 @@ internal abstract class BaseRepository<T> where T : BaseEntity
 
     public void Add(T entity) => Context.Set<T>().Add(entity);
 
-    private void Remove(T entity) => Context.Set<T>().Remove(entity);
+    public void Remove(T entity) => Context.Set<T>().Remove(entity);
 
-    private void RemoveRange(List<T> entities) => Context.Set<T>().RemoveRange(entities);
+    public void RemoveRange(List<T> entities) => Context.Set<T>().RemoveRange(entities);
 
-    private void Update(T entity) => Context.Set<T>().Update(entity);
+    public void Update(T entity) => Context.Set<T>().Update(entity);
 }
