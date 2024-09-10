@@ -7,7 +7,7 @@
     "Clean Architecture"
   ],
   "name": "Fast Clean Architecture Solution",
-  "defaultName": "CompanyName.SolutionName",
+  "defaultName": "FastCleanArchitecture",
   "description": "A Clean Architecture Solution Template for creating a API Rest with .Net",
   "identity": "Fast.Clean.Architecture.Solution.CSharp",
   "groupIdentity": "Fast.Clean.Architecture.Solution",
@@ -19,15 +19,31 @@
   "sourceName": "FastCleanArchitecture",
   "preferNameDirectory": true,
   "symbols": {
-    "UseSQLite": {
+    "UseOracle": {
       "type": "parameter",
       "datatype": "bool",
       "defaultValue": "false",
-      "description": "Whether to use SQLite instead of LocalDB."
+      "description": "Whether to use Oracle instead of LocalDB."
     },
     "UseLocalDB": {
       "type": "computed",
-      "value": "(!UseSQLite)"
+      "value": "(!UseOracle)"
+    },
+    "fcaRepositoryUrl": {
+      "type": "generated",
+      "generator": "constant",
+      "replaces": "fcaRepositoryUrl",
+      "parameters": {
+        "value": "https://github.com/christianrd/FastCleanArchitecture"
+      }
+    },
+    "fcaPackageVersion": {
+      "type": "generated",
+      "generator": "constant",
+      "replaces": "fcaPackageVersion",
+      "parameters": {
+        "value": "8.0.6"
+      }
     }
   },
   "sources": [
@@ -56,14 +72,13 @@
         {
           "condition": "(UseLocalDB)",
           "exclude": [
-            "src/Infrastructure/Data/SQLite/**",
-            "src/API/appsettings.SQLite.json",
-            "src/API/app.db",
-            "tests/Application.FunctionalTests/SqliteTestDatabase.cs"
+            "src/Infrastructure/Data/Oracle/**",
+            "src/API/appsettings.Oracle.json",
+            "tests/Application.FunctionalTests/OracleTestDatabase.cs"
           ]
         },
         {
-          "condition": "(UseSQLite)",
+          "condition": "(UseOracle)",
           "exclude": [
             "src/Infrastructure/Data/Migrations/**",
             "src/API/appsettings.json",
@@ -71,9 +86,9 @@
             "tests/Application.FunctionalTests/TestcontainersTestDatabase.cs"
           ],
           "rename": {
-            "src/Infrastructure/Data/SQLite/": "src/Infrastructure/Data/Migrations/",
-            "appsettings.SQLite.json": "appsettings.json",
-            "TestDatabase.Sqlite.cs": "TestDatabase.cs"
+            "src/Infrastructure/Data/Oracle/": "src/Infrastructure/Data/Migrations/",
+            "appsettings.Oracle.json": "appsettings.json",
+            "TestDatabase.Oracle.cs": "TestDatabase.cs"
           }
         }
       ]
