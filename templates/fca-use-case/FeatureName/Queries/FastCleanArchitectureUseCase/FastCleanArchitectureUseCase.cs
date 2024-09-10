@@ -1,6 +1,6 @@
-using FastCleanArchitecture.Application.Common.Interfaces;
+using FastCleanArchitecture.Application.Common.Messaging;
 
-namespace FastCleanArchitecture.Application.FeatureName.Queries.CleanArchitectureUseCase;
+namespace FastCleanArchitecture.Application.FeatureName.Queries.FastCleanArchitectureUseCase;
 
 public record FastCleanArchitectureUseCaseQuery : IQuery<object>
 {

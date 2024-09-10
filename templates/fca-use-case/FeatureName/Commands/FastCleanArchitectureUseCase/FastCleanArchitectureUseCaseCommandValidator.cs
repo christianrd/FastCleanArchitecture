@@ -1,8 +1,8 @@
-namespace FastCleanArchitecture.Application.FeatureName.Commands.CleanArchitectureUseCase;
+namespace FastCleanArchitecture.Application.FeatureName.Commands.FastCleanArchitectureUseCase;
 
 public class FastCleanArchitectureUseCaseCommandValidator : AbstractValidator<FastCleanArchitectureUseCaseCommand>
 {
-    public CleanArchitectureUseCaseCommandValidator()
+    public FastCleanArchitectureUseCaseCommandValidator()
     {
     }
 }

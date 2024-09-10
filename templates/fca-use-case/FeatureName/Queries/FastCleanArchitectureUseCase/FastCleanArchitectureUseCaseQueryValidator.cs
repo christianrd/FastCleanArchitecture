@@ -1,4 +1,4 @@
-namespace FastCleanArchitecture.Application.FeatureName.Queries.CleanArchitectureUseCase;
+namespace FastCleanArchitecture.Application.FeatureName.Queries.FastCleanArchitectureUseCase;
 
 public class FastCleanArchitectureUseCaseQueryValidator : AbstractValidator<FastCleanArchitectureUseCaseQuery>
 {

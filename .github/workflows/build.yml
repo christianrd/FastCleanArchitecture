@@ -5,6 +5,7 @@ on:
     branches: 
         - main 
         - develop
+        - release/*
     paths-ignore:
       - .gitignore
       - CODE_OF_CONDUCT.md

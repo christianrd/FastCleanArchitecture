@@ -17,7 +17,14 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application.UnitTests", "te
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infrastructure\Infrastructure.csproj", "{2559E67B-B202-4E5A-9091-8E6418D22E08}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "src\API\API.csproj", "{3A7EAD0E-2F46-4022-9119-96593FFEC72D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "src\API\API.csproj", "{3A7EAD0E-2F46-4022-9119-96593FFEC72D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{C7FBE7FF-00ED-4E1B-B015-CC61AE8E0FD3}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		FastCleanArchitecture.nuspec = FastCleanArchitecture.nuspec
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

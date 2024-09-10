@@ -7,13 +7,10 @@
     <UserSecretsId>f5e32e1e-4b42-4557-9635-b9a0c84f3591</UserSecretsId>
     <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
     <DockerfileContext>..\..</DockerfileContext>
-	<CompanyName>Fast Clean Architecture</CompanyName>
-	<Company>$(CompanyName)</Company>
-	<RootNamespace>$(CompanyName.Replace(" ", "")).$(MSBuildProjectName.Replace(" ", ""))</RootNamespace>
-	<AssemblyName>$(CompanyName.Replace(" ", "")).$(MSBuildProjectName.Replace(" ", ""))</AssemblyName>
-	<Authors>Cristian D. Rodríguez V.</Authors>
-	<NuspecFile>.\..\..\FastCleanArchitecture.nuspec</NuspecFile>
-	<NuspecProperties>version=$(PackageVersion)</NuspecProperties>
+	  <CompanyName>FastCleanArchitecture</CompanyName>
+	  <Company>$(CompanyName)</Company>
+	  <RootNamespace>$(CompanyName.Replace(" ", "")).$(MSBuildProjectName.Replace(" ", ""))</RootNamespace>
+	  <AssemblyName>$(CompanyName.Replace(" ", "")).$(MSBuildProjectName.Replace(" ", ""))</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

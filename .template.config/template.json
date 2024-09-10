@@ -4,7 +4,9 @@
   "classifications": [
     "Web",
     "API",
-    "Clean Architecture"
+    "Clean Architecture",
+    "template",
+    "Fast Clean Architecture"
   ],
   "name": "Fast Clean Architecture Solution",
   "defaultName": "FastCleanArchitecture",
@@ -42,7 +44,7 @@
       "generator": "constant",
       "replaces": "fcaPackageVersion",
       "parameters": {
-        "value": "8.0.6"
+        "value": "8.0.8"
       }
     }
   },
@@ -63,7 +65,8 @@
         ".idea/**/*",
         "**/.git/**",
         "**/azure-pipelines.yml",
-        "README.md"
+        "README.md",
+        "**/.github/**"
       ],
       "rename": {
         "README-template.md": "README.md"

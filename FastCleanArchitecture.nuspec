@@ -6,7 +6,7 @@
 		<version>8.0.8</version>
 		<title>Fast Clean Architecture Solution Template</title>
 		<authors>christiandr</authors>
-		<description>Fast Clean Architecture Solution Template for .NET 8.0.8.</description>
+		<description>Fast Clean Architecture Solution Template for .NET 8.</description>
 		<summary>
 			A Clean Architecture Solution Template for creating apps using Web API only with DotNet.
 		</summary>
@@ -16,7 +16,7 @@
 
 		<license type="expression">MIT</license>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<tags>fast-clean-architecture project template csharp dotnet</tags>
+		<tags>fast-clean-architecture clean-architecture project template csharp dotnet</tags>
 		<icon>icon.png</icon>
 		<readme>README.md</readme>
 
@@ -28,6 +28,6 @@
 	<files>
 		<file src=".template.config\icon.png" />
 		<file src="README.md" />
-		<file src=".\**" target="content" exclude="**\bin\**;**\obj\**;.\.vs\**;.\.vscode\**;content\Directory.Build.*;.\.git\**;.\README.md;" />
+		<file src=".\**" target="content" exclude="**\bin\**;**\obj\**;.\.vs\**;.\.vscode\**;content\Directory.Build.*;.\.git\**;.\.github\workflows\package.yml;.\.github\workflows\codeql.yml;.\.github\workflows\build.yml;.\.github\ISSUE_TEMPLATE\**;.\.github\icon.png;.\.github\FUNDING.md;.\CODE_OF_CONDUCT.md;.\LICENSE;.\README.md;" />
 	</files>
 </package>
