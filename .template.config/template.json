@@ -1,6 +1,6 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "author": "Cristian D. Rodriguez V.",
+  "author": "christiandr",
   "classifications": [
     "Web",
     "API",
@@ -75,7 +75,7 @@
         {
           "condition": "(UseLocalDB)",
           "exclude": [
-            "src/Infrastructure/Data/Oracle/**",
+            "src/Infrastructure/Data/OracleMigrations/**",
             "src/API/appsettings.Oracle.json",
             "tests/Application.FunctionalTests/OracleTestDatabase.cs"
           ]
@@ -89,7 +89,7 @@
             "tests/Application.FunctionalTests/TestcontainersTestDatabase.cs"
           ],
           "rename": {
-            "src/Infrastructure/Data/Oracle/": "src/Infrastructure/Data/Migrations/",
+            "src/Infrastructure/Data/OracleMigrations/": "src/Infrastructure/Data/Migrations/",
             "appsettings.Oracle.json": "appsettings.json",
             "TestDatabase.Oracle.cs": "TestDatabase.cs"
           }
