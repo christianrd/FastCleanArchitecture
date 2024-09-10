@@ -20,11 +20,11 @@ public static class DependencyInjection
 
         services.AddDbContext<ApplicationDbContext>(options =>
         {
-            //#if (UseOracle)
+#if (UseOracle)
             options.UseOracle(connectionString);
-            //#else
-            //            options.UseSqlServer(connectionString);
-            //#endif
+#else
+            options.UseSqlServer(connectionString);
+#endif
         });
 
         services.AddScoped<ApplicationDbContextInitialiser>();

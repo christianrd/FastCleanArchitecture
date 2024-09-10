@@ -12,5 +12,11 @@ internal abstract class BaseRepository<T> where T : BaseEntity
     public async Task<T?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default)
         => await Context.Set<T>().FirstOrDefaultAsync(x => x.Id == id, cancellationToken);
 
-    public void Add(T entity) => Context.Add(entity);
+    public void Add(T entity) => Context.Set<T>().Add(entity);
+
+    public void Remove(T entity) => Context.Set<T>().Remove(entity);
+
+    public void RemoveRange(List<T> entities) => Context.Set<T>().RemoveRange(entities);
+
+    public void Update(T entity) => Context.Set<T>().Update(entity);
 }
