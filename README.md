@@ -6,7 +6,7 @@
 The purpose of this template is to offer a simple and effective solution for building enterprise applications 
 by harnessing the capabilities of Clean Architecture and ASP.NET Core. 
 With this template, you can easily set up a Web API following Clean Architecture and Domain Drive Design principles. 
-Starting is quick and easy�just install the .NET template (detailed instructions provided below).
+Starting is quick and easy-just install the .NET template (detailed instructions provided below).
 
 
 ## Getting Started
