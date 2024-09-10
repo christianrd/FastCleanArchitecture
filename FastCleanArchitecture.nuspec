@@ -1,34 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
-  <metadata>
+	<metadata>
 
-    <id>Fast.Clean.Architecture.Solution.Template</id>
-    <version>$version$</version>
-    <title>Fast Clean Architecture Solution Template</title>
-    <authors>Cristian D. Rodríguez V.</authors>
-    <description>Fast Clean Architecture Solution Template for .NET $version$.</description>
-    <summary>
-      A Clean Architecture Solution Template for creating apps using Web API only with DotNet.
-    </summary>
+		<id>Fast.Clean.Architecture.Solution.Template</id>
+		<version>$version$</version>
+		<title>Fast Clean Architecture Solution Template</title>
+		<authors>christiandr</authors>
+		<description>Fast Clean Architecture Solution Template for .NET $version$.</description>
+		<summary>
+			A Clean Architecture Solution Template for creating apps using Web API only with DotNet.
+		</summary>
 
-    <projectUrl>https://dev.azure.com/evopoint/9c05739b-56f2-480e-b95e-46cc18bdc5d4/_git/694fd6a0-5a06-4606-92c9-1455076081a3</projectUrl>
-    <repository type="git" url="https://dev.azure.com/evopoint/9c05739b-56f2-480e-b95e-46cc18bdc5d4/_git/694fd6a0-5a06-4606-92c9-1455076081a3" branch="main" />
+		<projectUrl>https://dev.azure.com/evopoint/9c05739b-56f2-480e-b95e-46cc18bdc5d4/_git/694fd6a0-5a06-4606-92c9-1455076081a3</projectUrl>
+		<repository type="git" url="https://dev.azure.com/evopoint/9c05739b-56f2-480e-b95e-46cc18bdc5d4/_git/694fd6a0-5a06-4606-92c9-1455076081a3" branch="main" />
 
-    <license type="expression">Unlicenced</license>
-    <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <tags>fast-clean-architecture project template csharp dotnet</tags>
-    <icon>icon.png</icon>
+		<license type="expression">Unlicenced</license>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<tags>fast-clean-architecture project template csharp dotnet</tags>
+		<icon>icon.png</icon>
 
-    <packageTypes>
-      <packageType name="Template" />
-    </packageTypes>
+		<packageTypes>
+			<packageType name="Template" />
+		</packageTypes>
+	</metadata>
 
-  </metadata>
-
-  <files>
-    <file src=".template.config\icon.png" />
-    <file src="README.md" />
-    <file src=".\**" target="content" exclude="**\bin\**;**\obj\**;.\.vs\**;.\.vscode\**;content\Directory.Build.*;.\.git\**;.\README.md;" />
-  </files>
-
+	<files>
+		<file src=".template.config\icon.png" />
+		<file src="README.md" />
+		<file src=".\**" target="content" exclude="**\bin\**;**\obj\**;.\.vs\**;.\.vscode\**;content\Directory.Build.*;.\.git\**;.\README.md;" />
+	</files>
 </package>
