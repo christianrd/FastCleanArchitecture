@@ -3,10 +3,10 @@
 	<metadata>
 
 		<id>Fast.Clean.Architecture.Solution.Template</id>
-		<version>$version$</version>
+		<version>8.0.8</version>
 		<title>Fast Clean Architecture Solution Template</title>
 		<authors>christiandr</authors>
-		<description>Fast Clean Architecture Solution Template for .NET $version$.</description>
+		<description>Fast Clean Architecture Solution Template for .NET 8.0.8.</description>
 		<summary>
 			A Clean Architecture Solution Template for creating apps using Web API only with DotNet.
 		</summary>
