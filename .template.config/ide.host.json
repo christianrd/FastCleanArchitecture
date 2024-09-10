@@ -4,12 +4,12 @@
   "icon": "icon.png",
   "symbolInfo": [
     {
-      "id": "UseSQLite",
+      "id": "UseOracle",
       "name": {
-        "text": "Use SQLite"
+        "text": "Use Oracle"
       },
       "description": {
-        "text": "Use SQLite for database (default is LocalDB)."
+        "text": "Use Oracle for database (default is LocalDB)."
       },
       "isVisible": true
     }

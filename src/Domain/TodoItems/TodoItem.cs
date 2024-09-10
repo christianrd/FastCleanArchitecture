@@ -25,7 +25,7 @@ public sealed class TodoItem : BaseAuditableEntity
 
     public DateTime? Reminder { get; private set; }
 
-    public static TodoItem Create(Guid listId, string? title, string? note, PriorityLevel priority, DateTime? reminder, string? createdBy)
+    public static TodoItem Create(Guid listId, string? title, PriorityLevel priority = PriorityLevel.None, string? note = null, DateTime? reminder = null, string? createdBy = null)
     {
         return new TodoItem(Guid.NewGuid(), listId, title, note, priority, reminder, createdBy);
     }

@@ -6,6 +6,9 @@ public abstract class BaseEntity
 
     protected BaseEntity(Guid id) => Id = id;
 
+    protected BaseEntity()
+    { }
+
     public Guid Id { get; init; }
 
     public IReadOnlyList<IDomainEvent> GetDomainEvents() => _domainEvents.AsReadOnly();
