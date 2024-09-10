@@ -6,17 +6,22 @@ namespace FastCleanArchitecture.Domain.TodoLists;
 
 public sealed class TodoList : BaseAuditableEntity
 {
-    private TodoList(Guid id, string? title) : base(id)
+    private TodoList(Guid id, string? title, Colour? colour, IList<TodoItem>? items) : base(id)
     {
         Title = title;
+        Colour = colour ?? Colour.Grey;
+        Items = items ?? [];
     }
 
     public string? Title { get; private set; }
-    public Colour Colour { get; private set; } = Colour.Grey;
-    public IList<TodoItem> Items { get; private set; } = new List<TodoItem>();
+    public Colour Colour { get; private set; }
+    public IList<TodoItem> Items { get; private set; }
 
-    public static TodoList Create(string? title)
+    public static TodoList Create(
+        string? title,
+        Colour? colour = null,
+        IList<TodoItem>? todoItems = null)
     {
-        return new TodoList(Guid.NewGuid(), title);
+        return new TodoList(Guid.NewGuid(), title, colour, todoItems);
     }
 }
