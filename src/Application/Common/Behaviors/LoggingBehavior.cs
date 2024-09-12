@@ -20,17 +20,17 @@ public class LoggingBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, 
 
         try
         {
-            _logger.LogInformation("Executing command {Command}", name);
+            _logger.LogInformation("FastCleanArchitecture Executing Request: {Command}", name);
 
             var result = await next();
 
-            _logger.LogInformation("Command {Command} processed successfully", name);
+            _logger.LogInformation("FastCleanArchitecture processed request successfully: {Command}", name);
 
             return result;
         }
         catch (Exception ex)
         {
-            _logger.LogError(ex, "Command {Command} processing failed", name);
+            _logger.LogError(ex, "FastCleanArchitecture processing failed request: {Command}", name);
             throw;
         }
     }

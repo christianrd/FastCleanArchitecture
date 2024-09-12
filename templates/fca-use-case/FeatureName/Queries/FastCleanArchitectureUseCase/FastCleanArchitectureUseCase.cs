@@ -2,7 +2,7 @@ using FastCleanArchitecture.Application.Common.Messaging;
 
 namespace FastCleanArchitecture.Application.FeatureName.Queries.FastCleanArchitectureUseCase;
 
-public record FastCleanArchitectureUseCaseQuery : IQuery<object>
+public sealed record FastCleanArchitectureUseCaseQuery : IQuery<object>
 {
 }
 

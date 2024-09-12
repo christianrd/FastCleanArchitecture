@@ -2,6 +2,7 @@
 using FastCleanArchitecture.Application.Common.Mappings;
 using FluentValidation;
 using Mapster;
+using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics.CodeAnalysis;
 
@@ -17,6 +18,7 @@ public static class DependencyInjection
             conf.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
             conf.AddOpenBehavior(typeof(LoggingBehavior<,>));
             conf.AddOpenBehavior(typeof(ValidationBehavior<,>));
+            conf.AddBehavior(typeof(IPipelineBehavior<,>), typeof(PerformanceBehavior<,>));
         });
 
         services.AddMapster();

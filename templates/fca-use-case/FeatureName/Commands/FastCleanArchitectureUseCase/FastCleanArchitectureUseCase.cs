@@ -2,7 +2,7 @@ using FastCleanArchitecture.Application.Common.Messaging;
 
 namespace FastCleanArchitecture.Application.FeatureName.Commands.FastCleanArchitectureUseCase;
 
-public record FastCleanArchitectureUseCaseCommand : ICommand<object>
+public sealed record FastCleanArchitectureUseCaseCommand : ICommand<object>
 {
 }
 

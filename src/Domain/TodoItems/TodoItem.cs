@@ -46,4 +46,12 @@ public sealed class TodoItem : BaseAuditableEntity
         todoItem.Done = Done;
         return todoItem;
     }
+
+    public static TodoItem UpdateDetail(Guid listId, PriorityLevel priority, string? note, TodoItem todoItem)
+    {
+        todoItem.ListId = listId;
+        todoItem.Priority = priority;
+        todoItem.Note = note;
+        return todoItem;
+    }
 }

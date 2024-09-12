@@ -36,7 +36,7 @@ internal sealed class UpdateTodoItemCommandHandler : ICommandHandler<UpdateTodoI
     {
         var item = await _repository.GetByIdAsync(request.Id, cancellationToken);
 
-        if (item is null) return Result.Ok();
+        if (item is null) return Result.Fail("Item not found.");
 
         _repository.Update(TodoItem.Update(request.Body.Title, request.Body.Done, item));
         await _unitOfWork.SaveChangesAsync(cancellationToken);
