@@ -3,9 +3,9 @@ using FastCleanArchitecture.Domain.Common;
 using FastCleanArchitecture.Domain.TodoLists;
 using FluentResults;
 
-namespace FastCleanArchitecture.Application.TodoLists.Commands.DeleteTodoList;
+namespace FastCleanArchitecture.Application.TodoLists.Commands.Delete;
 
-public record DeleteTodoListCommand(Guid id) : ICommand;
+public record DeleteTodoListCommand(Guid Id) : ICommand;
 
 internal sealed class DeleteTodoListCommandHandler : ICommandHandler<DeleteTodoListCommand>
 {
@@ -20,7 +20,7 @@ internal sealed class DeleteTodoListCommandHandler : ICommandHandler<DeleteTodoL
 
     public async Task<Result> Handle(DeleteTodoListCommand request, CancellationToken cancellationToken)
     {
-        var entity = await _todoListRepository.GetByIdAsync(request.id, cancellationToken);
+        var entity = await _todoListRepository.GetByIdAsync(request.Id, cancellationToken);
         if (entity is null)
             return Result.Ok();
 

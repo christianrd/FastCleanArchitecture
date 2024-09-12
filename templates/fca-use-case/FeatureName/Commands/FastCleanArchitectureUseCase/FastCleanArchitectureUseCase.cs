@@ -6,9 +6,9 @@ public record FastCleanArchitectureUseCaseCommand : ICommand<object>
 {
 }
 
-internal sealed class FastArchitectureUseCaseCommandHandler : ICommandHandler<FastCleanArchitectureUseCaseCommand, object>
+internal sealed class FastCleanArchitectureUseCaseCommandHandler : ICommandHandler<FastCleanArchitectureUseCaseCommand, object>
 {
-    public async Task<object> Handle(FastCleanArchitectureUseCaseCommand request, CancellationToken cancellationToken)
+    public async Task<Result<object>> Handle(FastCleanArchitectureUseCaseCommand request, CancellationToken cancellationToken)
     {
         throw new NotImplementedException();
     }

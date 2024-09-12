@@ -19,10 +19,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "src\Infra
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "src\API\API.csproj", "{3A7EAD0E-2F46-4022-9119-96593FFEC72D}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SolutionItems", "SolutionItems", "{C7FBE7FF-00ED-4E1B-B015-CC61AE8E0FD3}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C7FBE7FF-00ED-4E1B-B015-CC61AE8E0FD3}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		FastCleanArchitecture.nuspec = FastCleanArchitecture.nuspec
+		README-template.md = README-template.md
 		README.md = README.md
 	EndProjectSection
 EndProject

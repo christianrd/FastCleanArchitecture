@@ -3,17 +3,17 @@ using System;
 using FastCleanArchitecture.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using Oracle.EntityFrameworkCore.Metadata;
 
 #nullable disable
 
-namespace FastCleanArchitecture.Infrastructure.Data.OracleMigrations
+namespace FastCleanArchitecture.Infrastructure.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240910180110_InitialMigrations")]
-    partial class InitialMigrations
+    [Migration("20240912040604_Migrations")]
+    partial class Migrations
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,49 +23,49 @@ namespace FastCleanArchitecture.Infrastructure.Data.OracleMigrations
                 .HasAnnotation("ProductVersion", "8.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
-            OracleModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
             modelBuilder.Entity("FastCleanArchitecture.Domain.TodoItems.TodoItem", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("RAW(16)");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTimeOffset>("CreatedAtUtc")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Done")
+                        .HasColumnType("bit");
 
                     b.Property<Guid>("ListId")
-                        .HasColumnType("RAW(16)");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTimeOffset>("ModifiedAtUtc")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Note")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Priority")
-                        .HasColumnType("NUMBER(10)");
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("Reminder")
-                        .HasColumnType("TIMESTAMP(7)");
+                        .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("NVARCHAR2(200)");
-
-                    b.Property<Guid?>("TodoListId")
-                        .HasColumnType("RAW(16)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("TodoListId");
+                    b.HasIndex("ListId");
 
                     b.ToTable("TodoItems", (string)null);
                 });
@@ -74,24 +74,24 @@ namespace FastCleanArchitecture.Infrastructure.Data.OracleMigrations
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("RAW(16)");
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<DateTimeOffset>("CreatedAtUtc")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("CreatedBy")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTimeOffset>("ModifiedAtUtc")
-                        .HasColumnType("TIMESTAMP(7) WITH TIME ZONE");
+                        .HasColumnType("datetimeoffset");
 
                     b.Property<string>("ModifiedBy")
-                        .HasColumnType("NVARCHAR2(2000)");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(200)
-                        .HasColumnType("NVARCHAR2(200)");
+                        .HasColumnType("nvarchar(200)");
 
                     b.HasKey("Id");
 
@@ -102,7 +102,9 @@ namespace FastCleanArchitecture.Infrastructure.Data.OracleMigrations
                 {
                     b.HasOne("FastCleanArchitecture.Domain.TodoLists.TodoList", null)
                         .WithMany("Items")
-                        .HasForeignKey("TodoListId");
+                        .HasForeignKey("ListId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("FastCleanArchitecture.Domain.TodoLists.TodoList", b =>
@@ -110,11 +112,11 @@ namespace FastCleanArchitecture.Infrastructure.Data.OracleMigrations
                     b.OwnsOne("FastCleanArchitecture.Domain.TodoLists.ValueObjects.Colour", "Colour", b1 =>
                         {
                             b1.Property<Guid>("TodoListId")
-                                .HasColumnType("RAW(16)");
+                                .HasColumnType("uniqueidentifier");
 
                             b1.Property<string>("Code")
                                 .IsRequired()
-                                .HasColumnType("NVARCHAR2(2000)");
+                                .HasColumnType("nvarchar(max)");
 
                             b1.HasKey("TodoListId");
 

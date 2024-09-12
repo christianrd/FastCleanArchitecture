@@ -15,6 +15,11 @@ internal sealed class TodoListConfiguration : IEntityTypeConfiguration<TodoList>
             .HasMaxLength(200)
             .IsRequired();
 
+        builder.HasMany(t => t.Items)
+            .WithOne()
+            .HasForeignKey(x => x.ListId)
+            .OnDelete(DeleteBehavior.Cascade);
+
         builder.OwnsOne(b => b.Colour);
     }
 }

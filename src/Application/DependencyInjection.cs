@@ -1,5 +1,7 @@
 ﻿using FastCleanArchitecture.Application.Common.Behaviors;
+using FastCleanArchitecture.Application.Common.Mappings;
 using FluentValidation;
+using Mapster;
 using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics.CodeAnalysis;
 
@@ -17,7 +19,11 @@ public static class DependencyInjection
             conf.AddOpenBehavior(typeof(ValidationBehavior<,>));
         });
 
+        services.AddMapster();
+        MapsterConfig.Configure();
+
         services.AddValidatorsFromAssembly(typeof(DependencyInjection).Assembly);
+
         return services;
     }
 }

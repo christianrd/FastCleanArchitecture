@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace FastCleanArchitecture.API.Controllers;
 
 [ApiController]
-public abstract class BaseController : ControllerBase
+public abstract class ApiControllerBase : ControllerBase
 {
     protected readonly ISender Sender;
 
-    public BaseController(ISender Sender) => this.Sender = Sender;
+    public ApiControllerBase(ISender Sender) => this.Sender = Sender;
 }

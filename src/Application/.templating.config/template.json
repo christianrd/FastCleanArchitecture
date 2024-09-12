@@ -13,7 +13,7 @@
     "language": "C#",
     "type": "item"
   },
-  "sourceName": "UpdateTodoList",
+  "sourceName": "UpdateTodoItem",
   "preferNameDirectory": false,
   "symbols": {
     "DefaultNamespace": {
@@ -26,8 +26,8 @@
       "type": "parameter",
       "datatype": "string",
       "isRequired": true,
-      "replaces": "TodoLists",
-      "fileRename": "TodoLists"
+      "replaces": "TodoItems",
+      "fileRename": "TodoItems"
     },
     "useCaseType": {
       "type": "parameter",
@@ -66,11 +66,11 @@
       "modifiers": [
         {
           "condition": "(createCommand)",
-          "exclude": [ "TodoLists/Queries/**/*" ]
+          "exclude": [ "TodoItems/Queries/**/*" ]
         },
         {
           "condition": "(createQuery)",
-          "exclude": [ "TodoLists/Commands/**/*" ]
+          "exclude": [ "TodoItems/Commands/**/*" ]
         }
       ]
     }

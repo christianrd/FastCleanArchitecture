@@ -3,7 +3,7 @@ using FastCleanArchitecture.Domain.Common;
 using FastCleanArchitecture.Domain.TodoLists;
 using FluentResults;
 
-namespace FastCleanArchitecture.Application.TodoLists.Commands.PurgeTodoLists;
+namespace FastCleanArchitecture.Application.TodoLists.Commands.Purge;
 
 public record PurgeTodoListsCommand : ICommand;
 
