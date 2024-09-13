@@ -30,3 +30,6 @@ app.MapControllers();
 await app.UseInfrastructureAsync();
 
 app.Run();
+
+public partial class Program
+{ }
