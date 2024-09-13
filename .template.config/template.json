@@ -31,6 +31,18 @@
       "type": "computed",
       "value": "(!UseOracle)"
     },
+    "UseController": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "true",
+      "description": "Use controller instead of minimals APIs."
+    },
+    "EnableContainerSupport": {
+      "type": "parameter",
+      "datatype": "bool",
+      "defaultValue": "false",
+      "description": "Enable container support (Docker for linux)."
+    },
     "fcaRepositoryUrl": {
       "type": "generated",
       "generator": "constant",
@@ -44,7 +56,7 @@
       "generator": "constant",
       "replaces": "fcaPackageVersion",
       "parameters": {
-        "value": "8.0.8"
+        "value": "8.0.1"
       }
     }
   },
@@ -93,6 +105,19 @@
             "appsettings.Oracle.json": "appsettings.json",
             "TestDatabase.Oracle.cs": "TestDatabase.cs"
           }
+        },
+        {
+          "condition": "(!UseController)",
+          "exclude": [
+            "src/API/Controllers"
+          ]
+        },
+        {
+          "condition": "(!EnableContainerSupport)",
+          "exclude": [
+            "src/API/Dockerfile",
+            ".dockerignore"
+          ]
         }
       ]
     }

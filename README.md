@@ -14,7 +14,6 @@ Starting is quick and easy-just install the .NET template (detailed instructions
 The following prerequisites are required to build and run the solution:
 
 - [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0) (latest version)
-- [Node.js](https://nodejs.org/) (latest LTS, only required if you are using Angular or React)
 
 The easiest way to get started is to install the [.NET template](https://www.nuget.org/packages/Fast.Clean.Architecture.Solution.Template):
 ```
@@ -85,6 +84,8 @@ The template includes a full CI/CD pipeline. The pipeline is responsible for bui
 * [ASP.NET Core 8](https://docs.microsoft.com/en-us/aspnet/core/introduction-to-aspnet-core)
 * [Entity Framework Core 8](https://docs.microsoft.com/en-us/ef/core/)
 * [MediatR](https://github.com/jbogard/MediatR)
+* [Maspter](https://github.com/MapsterMapper/Mapster)
+* [FluentResult](https://github.com/altmann/FluentResults)
 * [FluentValidation](https://fluentvalidation.net/)
 * [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [Moq](https://github.com/devlooped/moq) & [Respawn](https://github.com/jbogard/Respawn)
 

@@ -2,6 +2,12 @@
   "symbolInfo": {
     "UseOracle": {
       "longName": "use-oracle"
+    },
+    "EnableContainerSupport": {
+      "longName": "enable-container-support"
+    },
+    "UseController": {
+      "longName": "use-controller"
     }
   }
 }

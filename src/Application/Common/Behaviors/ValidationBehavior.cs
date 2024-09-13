@@ -21,10 +21,11 @@ public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TReques
             return await next();
 
         var context = new ValidationContext<TRequest>(request);
+        var validationResults = await Task.WhenAll(
+            _validators.Select(v => v.ValidateAsync(context, cancellationToken)));
 
-        var validationErrors = _validators
-            .Select(validator => validator.Validate(context))
-            .Where(validationResult => validationResult.Errors.Any())
+        var validationErrors = validationResults
+            .Where(vr => vr.Errors.Any())
             .SelectMany(validationResult => validationResult.Errors)
             .Select(validationFailure => new ValidationError(
                 validationFailure.PropertyName,

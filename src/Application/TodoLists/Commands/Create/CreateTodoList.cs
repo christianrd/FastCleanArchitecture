@@ -3,7 +3,7 @@ using FastCleanArchitecture.Domain.Common;
 using FastCleanArchitecture.Domain.TodoLists;
 using FluentResults;
 
-namespace FastCleanArchitecture.Application.TodoLists.Commands.CreatTodoList;
+namespace FastCleanArchitecture.Application.TodoLists.Commands.Create;
 
 public record CreateTodoListCommand : ICommand<Guid>
 {

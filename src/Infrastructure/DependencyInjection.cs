@@ -1,4 +1,5 @@
 ﻿using FastCleanArchitecture.Domain.Common;
+using FastCleanArchitecture.Domain.TodoItems;
 using FastCleanArchitecture.Domain.TodoLists;
 using FastCleanArchitecture.Infrastructure.Data;
 using FastCleanArchitecture.Infrastructure.Data.Repositories;
@@ -30,6 +31,7 @@ public static class DependencyInjection
         services.AddScoped<ApplicationDbContextInitialiser>();
 
         services.AddScoped<ITodoListRepository, TodoListRepository>();
+        services.AddScoped<ITodoItemRepository, TodoItemRepository>();
         services.AddScoped<IUnitOfWork>(sp => sp.GetRequiredService<ApplicationDbContext>());
 
         return services;

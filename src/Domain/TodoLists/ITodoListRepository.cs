@@ -3,12 +3,27 @@
 public interface ITodoListRepository
 {
     /// <summary>
+    /// Get a todo list by Id.
+    /// </summary>
+    /// <param name="id"></param>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<TodoList?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+
+    /// <summary>
     /// Get a todo list by title.
     /// </summary>
     /// <param name="title"></param>
     /// <param name="cancellationToken"></param>
     /// <returns></returns>
     Task<TodoList?> GetByTitleAsync(string title, CancellationToken cancellationToken = default);
+
+    /// <summary>
+    /// Get all todo lists.
+    /// </summary>
+    /// <param name="cancellationToken"></param>
+    /// <returns></returns>
+    Task<List<TodoList>> GetAllAsync(CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Add a todo list.

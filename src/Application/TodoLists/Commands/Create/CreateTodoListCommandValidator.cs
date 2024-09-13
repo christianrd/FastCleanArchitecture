@@ -1,7 +1,7 @@
 ﻿using FastCleanArchitecture.Domain.TodoLists;
 using FluentValidation;
 
-namespace FastCleanArchitecture.Application.TodoLists.Commands.CreatTodoList;
+namespace FastCleanArchitecture.Application.TodoLists.Commands.Create;
 
 public class CreateTodoListCommandValidator : AbstractValidator<CreateTodoListCommand>
 {
@@ -23,6 +23,6 @@ public class CreateTodoListCommandValidator : AbstractValidator<CreateTodoListCo
     {
         var entity = await _todoListRepository.GetByTitleAsync(title, cancellationToken);
 
-        return entity is not null;
+        return entity is null;
     }
 }

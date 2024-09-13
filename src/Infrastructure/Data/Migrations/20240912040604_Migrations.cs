@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace FastCleanArchitecture.Infrastructure.Migrations
+namespace FastCleanArchitecture.Infrastructure.Data.Migrations
 {
     /// <inheritdoc />
     public partial class Migrations : Migration
@@ -38,7 +38,7 @@ namespace FastCleanArchitecture.Infrastructure.Migrations
                     Note = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     Priority = table.Column<int>(type: "int", nullable: false),
                     Reminder = table.Column<DateTime>(type: "datetime2", nullable: true),
-                    TodoListId = table.Column<Guid>(type: "uniqueidentifier", nullable: true),
+                    Done = table.Column<bool>(type: "bit", nullable: false),
                     CreatedAtUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
                     CreatedBy = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     ModifiedAtUtc = table.Column<DateTimeOffset>(type: "datetimeoffset", nullable: false),
@@ -48,16 +48,17 @@ namespace FastCleanArchitecture.Infrastructure.Migrations
                 {
                     table.PrimaryKey("PK_TodoItems", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_TodoItems_TodoLists_TodoListId",
-                        column: x => x.TodoListId,
+                        name: "FK_TodoItems_TodoLists_ListId",
+                        column: x => x.ListId,
                         principalTable: "TodoLists",
-                        principalColumn: "Id");
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_TodoItems_TodoListId",
+                name: "IX_TodoItems_ListId",
                 table: "TodoItems",
-                column: "TodoListId");
+                column: "ListId");
         }
 
         /// <inheritdoc />
