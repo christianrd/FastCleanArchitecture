@@ -6,12 +6,28 @@
     {
       "id": "UseOracle",
       "name": {
-        "text": "Use Oracle"
+        "text": "Use oracle"
       },
       "description": {
-        "text": "Use Oracle for database (default is LocalDB)."
+        "text": "Use oracle for database (default is LocalDB)."
       },
       "isVisible": true
+    },
+    {
+      "id": "EnableContainerSupport",
+      "name": {
+        "text": "Enable container support"
+      },
+      "description": {
+        "text": "Enable container support and add Docker file for linux."
+      },
+      "isVisible": true
+    },
+    {
+      "id": "UseController",
+      "name": {
+        "text": "Use controller instead of minimals APIs."
+      }
     }
   ]
 }
