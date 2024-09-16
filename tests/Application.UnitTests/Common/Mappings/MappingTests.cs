@@ -1,9 +1,7 @@
 ﻿using FastCleanArchitecture.Application.Common.Mappings;
-using FastCleanArchitecture.Application.Common.Models;
 using FastCleanArchitecture.Application.TodoLists.Queries.GetTodos;
 using FastCleanArchitecture.Domain.TodoItems;
 using FastCleanArchitecture.Domain.TodoLists;
-using FluentAssertions;
 using Mapster;
 using MapsterMapper;
 using System.Runtime.Serialization;
