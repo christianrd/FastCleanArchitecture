@@ -2,9 +2,7 @@ using FastCleanArchitecture.Application;
 using FastCleanArchitecture.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
-#if (UseController)
 builder.Services.AddControllers();
-#endif
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
@@ -23,9 +21,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-#if (UseController)
 app.MapControllers();
-#endif
 
 await app.UseInfrastructureAsync();
 
