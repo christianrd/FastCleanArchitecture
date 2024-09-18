@@ -87,7 +87,7 @@ The template includes a full CI/CD pipeline. The pipeline is responsible for bui
 * [Maspter](https://github.com/MapsterMapper/Mapster)
 * [FluentResult](https://github.com/altmann/FluentResults)
 * [FluentValidation](https://fluentvalidation.net/)
-* [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [NetArchTest.Rules](https://github.com/BenMorris/NetArchTest), [Moq](https://github.com/devlooped/moq) & [Respawn](https://github.com/jbogard/Respawn)
+* [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [NetArchTest.Rules](https://github.com/BenMorris/NetArchTest), [TestContainer](https://dotnet.testcontainers.org/) & [Moq](https://github.com/devlooped/moq)
 
 ## Versions
 The main branch is now on .NET 8.0.

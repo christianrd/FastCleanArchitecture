@@ -1,5 +1,6 @@
 ﻿using FastCleanArchitecture.Infrastructure.Data;
 using MediatR;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.IntegrationTests.Infrastructure;
@@ -31,5 +32,19 @@ internal abstract class BaseIntegrationTest
         await _factory.DisposeAsync();
         _scope.Dispose();
         DbContext.Dispose();
+    }
+
+    protected async Task<TEntity?> FindAsync<TEntity>(params object[] keyValues) where TEntity : class
+    {
+        var context = _scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+        return await context.FindAsync<TEntity>(keyValues);
+    }
+
+    protected async Task<int> CountAsync<TEntity>() where TEntity : class
+    {
+        var context = _scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+        return await context.Set<TEntity>().CountAsync();
     }
 }

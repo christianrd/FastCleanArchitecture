@@ -44,6 +44,7 @@ public sealed class TodoItem : BaseAuditableEntity
     {
         todoItem.Title = title;
         todoItem.Done = Done;
+        todoItem.ModifiedAtUtc = DateTime.UtcNow;
         return todoItem;
     }
 
@@ -52,6 +53,7 @@ public sealed class TodoItem : BaseAuditableEntity
         todoItem.ListId = listId;
         todoItem.Priority = priority;
         todoItem.Note = note;
+        todoItem.ModifiedAtUtc = DateTime.UtcNow;
         return todoItem;
     }
 }
