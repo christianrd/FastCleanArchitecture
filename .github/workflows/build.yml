@@ -48,6 +48,11 @@ jobs:
     - name: Test solution
       run: dotnet test --no-build --configuration Release --filter "FullyQualifiedName!~AcceptanceTests"
 
+    - name: Analyze with SonarCloud
+      uses: sonarsource/sonarcloud-github-action@v3.0.0
+      env:
+        SONAR_TOKEN: ${{ secrets.SONARCLOUND_TOKEN }}
+
     - name: Publish website
       if: ${{ inputs.build-artifacts == true }}
       run: |

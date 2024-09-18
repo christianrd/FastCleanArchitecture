@@ -2,6 +2,7 @@
 
 [![Nuget](https://img.shields.io/nuget/v/Fast.Clean.Architecture.Solution.Template?label=NuGet)](https://www.nuget.org/packages/Fast.Clean.Architecture.Solution.Template)
 [![Nuget](https://img.shields.io/nuget/dt/Fast.Clean.Architecture.Solution.Template?label=Downloads)](https://www.nuget.org/packages/Fast.Clean.Architecture.Solution.Template)
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=christianrd_FastCleanArchitecture)](https://sonarcloud.io/summary/new_code?id=christianrd_FastCleanArchitecture)
 
 The purpose of this template is to offer a simple and effective solution for building enterprise applications 
 by harnessing the capabilities of Clean Architecture and ASP.NET Core. 
@@ -87,7 +88,7 @@ The template includes a full CI/CD pipeline. The pipeline is responsible for bui
 * [Maspter](https://github.com/MapsterMapper/Mapster)
 * [FluentResult](https://github.com/altmann/FluentResults)
 * [FluentValidation](https://fluentvalidation.net/)
-* [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [Moq](https://github.com/devlooped/moq) & [Respawn](https://github.com/jbogard/Respawn)
+* [NUnit](https://nunit.org/), [FluentAssertions](https://fluentassertions.com/), [NetArchTest.Rules](https://github.com/BenMorris/NetArchTest), [TestContainer](https://dotnet.testcontainers.org/) & [Moq](https://github.com/devlooped/moq)
 
 ## Versions
 The main branch is now on .NET 8.0.

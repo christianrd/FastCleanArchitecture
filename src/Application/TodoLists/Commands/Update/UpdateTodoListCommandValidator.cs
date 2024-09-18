@@ -23,6 +23,7 @@ public class UpdateTodoListCommandValidator : AbstractValidator<UpdateTodoListCo
     public async Task<bool> BeUniqueTitle(UpdateTodoListCommand request, string title, CancellationToken cancellationToken)
     {
         var entity = await _todoListRepository.GetByIdAsync(request.Id, cancellationToken);
-        return entity is not null && entity!.Title!.Equals(title, StringComparison.OrdinalIgnoreCase);
+
+        return entity is null || !entity!.Title!.Equals(title, StringComparison.OrdinalIgnoreCase);
     }
 }

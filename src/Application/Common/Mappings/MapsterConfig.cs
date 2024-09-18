@@ -12,8 +12,5 @@ internal static class MapsterConfig
     {
         TypeAdapterConfig<TodoItem, TodoItemDto>.NewConfig()
             .Map(dest => dest.Priority, src => (int)src.Priority);
-
-        TypeAdapterConfig<TodoList, LookupDto>.NewConfig();
-        TypeAdapterConfig<TodoItem, LookupDto>.NewConfig();
     }
 }
