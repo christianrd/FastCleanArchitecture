@@ -24,7 +24,13 @@ public static class DependencyInjection
 #if (UseOracle)
             options.UseOracle(connectionString);
 #else
-            options.UseSqlServer(connectionString);
+            options.UseSqlServer(connectionString, options =>
+            {
+                options.EnableRetryOnFailure(
+                    maxRetryCount: 3,
+                    maxRetryDelay: TimeSpan.FromSeconds(10),
+                    errorNumbersToAdd: null);
+            });
 #endif
         });
 

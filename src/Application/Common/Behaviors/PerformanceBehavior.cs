@@ -9,9 +9,9 @@ internal sealed class PerformanceBehavior<TRequest, TResponse> : IPipelineBehavi
     private readonly Stopwatch _timer;
     private readonly ILogger<TRequest> _logger;
 
-    public PerformanceBehavior(Stopwatch timer, ILogger<TRequest> logger)
+    public PerformanceBehavior(ILogger<TRequest> logger)
     {
-        _timer = timer;
+        _timer = new Stopwatch();
         _logger = logger;
     }
 
