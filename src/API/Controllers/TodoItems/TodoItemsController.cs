@@ -1,4 +1,5 @@
-﻿using FastCleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
+﻿using Asp.Versioning;
+using FastCleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
 using FastCleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem;
 using FastCleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem;
 using MediatR;
@@ -6,21 +7,22 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FastCleanArchitecture.API.Controllers.TodoItems;
 
-[Route("api/[controller]")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public sealed class TodoItemsController(ISender sender) : ApiControllerBase(sender)
 {
     [HttpPost]
-    public async Task<IActionResult> CreateTodoItem([FromBody] CreateTodoItemCommand request)
+    public async Task<IActionResult> CreateTodoItem([FromBody] CreateTodoItemCommand request, CancellationToken cancellation)
     {
-        await Sender.Send(request);
+        await Sender.Send(request, cancellation);
 
         return NoContent();
     }
 
     [HttpPut("{Id}")]
-    public async Task<IActionResult> UpdateTodoItem(UpdateTodoItemCommand request)
+    public async Task<IActionResult> UpdateTodoItem(UpdateTodoItemCommand request, CancellationToken cancellation)
     {
-        var result = await Sender.Send(request);
+        var result = await Sender.Send(request, cancellation);
         if (result.IsFailed)
             return NotFound("Item not found.");
 
@@ -28,9 +30,9 @@ public sealed class TodoItemsController(ISender sender) : ApiControllerBase(send
     }
 
     [HttpDelete("{Id}")]
-    public async Task<IActionResult> DeleteTodoItem([FromRoute] DeleteTodoItemCommand request)
+    public async Task<IActionResult> DeleteTodoItem([FromRoute] DeleteTodoItemCommand request, CancellationToken cancellation)
     {
-        await Sender.Send(request);
+        await Sender.Send(request, cancellation);
         return NoContent();
     }
 }

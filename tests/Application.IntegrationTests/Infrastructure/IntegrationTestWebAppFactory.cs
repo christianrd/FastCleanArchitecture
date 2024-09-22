@@ -45,7 +45,6 @@ internal class IntegrationTestWebAppFactory : WebApplicationFactory<Program>
                     options.UseSqlServer(_dbcontainer.GetConnectionString());
 #endif
                 });
-            services.AddScoped(_ => Stopwatch.StartNew());
         });
     }
 

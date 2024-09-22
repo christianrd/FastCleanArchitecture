@@ -1,4 +1,5 @@
-﻿using FastCleanArchitecture.Application.TodoLists.Commands.Create;
+﻿using Asp.Versioning;
+using FastCleanArchitecture.Application.TodoLists.Commands.Create;
 using FastCleanArchitecture.Application.TodoLists.Commands.Delete;
 using FastCleanArchitecture.Application.TodoLists.Commands.Update;
 using FastCleanArchitecture.Application.TodoLists.Queries.GetTodos;
@@ -7,20 +8,21 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace FastCleanArchitecture.API.Controllers.TodoLists;
 
-[Route("api/[controller]")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/[controller]")]
 public sealed class TodoListsController(ISender Sender) : ApiControllerBase(Sender)
 {
     [HttpGet(Name = nameof(GetTodoLists))]
-    public async Task<IActionResult> GetTodoLists()
+    public async Task<IActionResult> GetTodoLists(CancellationToken cancellation)
     {
-        var result = await Sender.Send(new GetTodosQuery());
+        var result = await Sender.Send(new GetTodosQuery(), cancellation);
         return Ok(result.ValueOrDefault);
     }
 
     [HttpPost]
-    public async Task<IActionResult> CreateTodoList(CreateTodoListCommand request)
+    public async Task<IActionResult> CreateTodoList(CreateTodoListCommand request, CancellationToken cancellation)
     {
-        var result = await Sender.Send(request);
+        var result = await Sender.Send(request, cancellation);
         if (result.IsFailed)
             return BadRequest(result.Errors);
 
@@ -28,9 +30,9 @@ public sealed class TodoListsController(ISender Sender) : ApiControllerBase(Send
     }
 
     [HttpPut("{Id}")]
-    public async Task<IActionResult> UpdateTodoList(UpdateTodoListCommand request)
+    public async Task<IActionResult> UpdateTodoList(UpdateTodoListCommand request, CancellationToken cancellation)
     {
-        var result = await Sender.Send(request);
+        var result = await Sender.Send(request, cancellation);
         if (result.IsFailed)
             return BadRequest(result.Errors);
 
@@ -38,9 +40,9 @@ public sealed class TodoListsController(ISender Sender) : ApiControllerBase(Send
     }
 
     [HttpDelete("{Id}")]
-    public async Task<IActionResult> DeleteTodoList([FromRoute] DeleteTodoListCommand request)
+    public async Task<IActionResult> DeleteTodoList([FromRoute] DeleteTodoListCommand request, CancellationToken cancellation)
     {
-        await Sender.Send(request);
+        await Sender.Send(request, cancellation);
         return NoContent();
     }
 }

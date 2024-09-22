@@ -1,15 +1,15 @@
+using FastCleanArchitecture.API.Infrastructure;
 using FastCleanArchitecture.Application;
 using FastCleanArchitecture.Infrastructure;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddControllers();
 
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddKeyVaultIfConfigured(builder.Configuration);
 
 builder.Services
     .AddApplication()
-    .AddInfrastructure(builder.Configuration);
+    .AddInfrastructure(builder.Configuration)
+    .AddApiServices();
 
 var app = builder.Build();
 
