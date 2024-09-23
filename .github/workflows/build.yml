@@ -47,15 +47,6 @@ jobs:
     - name: Build solution
       run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
 
-    - name: Install ReportGenerator
-      run: dotnet tool install --global dotnet-reportgenerator-globaltool
-
-    - name: Test solution with coverage
-      run: |
-        dotnet test ${{ env.SOLUTION_PATH }} --no-build --configuration Release --collect:"XPlat Code Coverage" --results-directory ./TestResults
-        reportgenerator -reports:./TestResults/**/coverage.cobertura.xml -targetdir:"coveragereport" -reporttypes:HtmlInline_AzurePipelines
-
-    
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v3.0.0
       env:
@@ -64,7 +55,22 @@ jobs:
         args: >
           -Dsonar.projectKey=christianrd_FastCleanArchitecture
           -Dsonar.organization=christianrd
-          -Dsonar.cs.opencover.reportPaths=coverage.opencover.xml
+          -Dsonar.cs.opencover.reportPaths=TestResults/coverage.opencover.xml
+          -Dsonar.Tests=tests/
+
+    - name: Test solution with coverage
+      run: |
+        dotnet test ${{ env.SOLUTION_PATH }} --no-build --configuration Release --collect:"Code Coverage" --results-directory ./TestResults -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+
+    - name: SonarCloud Scan
+      uses: sonarsource/sonarcloud-github-action@v3.0.0
+      env:
+        SONAR_TOKEN: ${{ secrets.SONARCLOUND_TOKEN }}
+      with:
+        args: >
+          -Dsonar.projectKey=christianrd_FastCleanArchitecture
+          -Dsonar.organization=christianrd
+          -Dsonar.cs.opencover.reportPaths=TestResults/coverage.opencover.xml
           -Dsonar.Tests=tests/
     
     - name: Publish website
