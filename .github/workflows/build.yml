@@ -38,21 +38,30 @@ jobs:
 
     - name: Install .NET
       uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ env.DOTNET_VERSION }}
 
     - name: Restore solution
-      run: dotnet restore
+      run: dotnet restore ${{ env.SOLUTION_PATH }}
 
     - name: Build solution
-      run: dotnet build --no-restore --configuration Release
-      
-    - name: Test solution
-      run: dotnet test --no-build --configuration Release --filter "FullyQualifiedName!~AcceptanceTests"
+      run: dotnet build ${{ env.SOLUTION_PATH }} --no-restore --configuration Release
 
-    - name: Analyze with SonarCloud
+    - name: Test solution with coverage
+      run: |
+        dotnet test ${{ env.SOLUTION_PATH }} --no-build --configuration Release --collect:"Code Coverage" --results-directory ./TestResults -- DataCollectionRunSettings.DataCollectors.DataCollector.Configuration.Format=opencover
+
+    - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@v3.0.0
       env:
         SONAR_TOKEN: ${{ secrets.SONARCLOUND_TOKEN }}
-
+      with:
+        args: >
+          -Dsonar.projectKey=christianrd_FastCleanArchitecture
+          -Dsonar.organization=christianrd
+          -Dsonar.cs.opencover.reportPaths=TestResults/coverage.opencover.xml
+          -Dsonar.Tests=tests/
+    
     - name: Publish website
       if: ${{ inputs.build-artifacts == true }}
       run: |
@@ -67,42 +76,4 @@ jobs:
       with:
         name: website
         path: ./src/API/publish/publish.zip
-        if-no-files-found: error
-    
-    - name: Create EF Core migrations bundle - Install tool-manifest
-      if: ${{ inputs.build-artifacts == true }}
-      run: |
-        dotnet new tool-manifest
-      env:
-        SkipNSwag: True
-
-    - name: Create EF Core migrations bundle - Install dotnet-ef
-      if: ${{ inputs.build-artifacts == true }}
-      run: |
-        dotnet tool install dotnet-ef --version 8.0.1
-      env:
-        SkipNSwag: True
-
-
-    - name: Create EF Core migrations bundle - bundle migrations
-      if: ${{ inputs.build-artifacts == true }}
-      run: |
-        dotnet ef migrations bundle --configuration Release -p ./src/Infrastructure/ -s ./src/API/ -o efbundle.exe
-      env:
-        SkipNSwag: True
-
-
-    - name: Create EF Core migrations bundle - zip migrations bundle
-      if: ${{ inputs.build-artifacts == true }}
-      run: |
-        zip -r ./efbundle.zip efbundle.exe
-      env:
-        SkipNSwag: True
-
-    - name: Upload EF Core migrations bundle artifact (efbundle)
-      if: ${{ inputs.build-artifacts == true }}
-      uses: actions/upload-artifact@v4
-      with:
-        name: efbundle
-        path: ./efbundle.zip
         if-no-files-found: error

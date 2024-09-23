@@ -2,7 +2,7 @@
 
 [![Nuget](https://img.shields.io/nuget/v/Fast.Clean.Architecture.Solution.Template?label=NuGet)](https://www.nuget.org/packages/Fast.Clean.Architecture.Solution.Template)
 [![Nuget](https://img.shields.io/nuget/dt/Fast.Clean.Architecture.Solution.Template?label=Downloads)](https://www.nuget.org/packages/Fast.Clean.Architecture.Solution.Template)
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=christianrd_FastCleanArchitecture)](https://sonarcloud.io/summary/new_code?id=christianrd_FastCleanArchitecture)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=christianrd_FastCleanArchitecture&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=christianrd_FastCleanArchitecture)
 
 The purpose of this template is to offer a simple and effective solution for building enterprise applications 
 by harnessing the capabilities of Clean Architecture and ASP.NET Core. 
