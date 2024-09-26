@@ -18,7 +18,7 @@ internal static class ApiServiceCollectionExtensions
             options.ApiVersionReader = new UrlSegmentApiVersionReader();
         }).AddApiExplorer(options =>
         {
-            options.GroupNameFormat = "'v'VVV";
+            options.GroupNameFormat = "'v'V";
             options.SubstituteApiVersionInUrl = true;
         });
 

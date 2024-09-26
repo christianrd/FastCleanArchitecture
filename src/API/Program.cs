@@ -24,7 +24,9 @@ app.UseHttpsRedirection();
 app.MapControllers();
 
 await app.UseInfrastructureAsync();
-
+#if (UseMinimalApis)
+app.MapEndPoints();
+#endif
 app.Run();
 
 public partial class Program;

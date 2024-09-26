@@ -37,11 +37,9 @@
       "defaultValue": "true",
       "description": "Use controller instead of minimals APIs."
     },
-    "EnableContainerSupport": {
-      "type": "parameter",
-      "datatype": "bool",
-      "defaultValue": "false",
-      "description": "Enable container support (Docker for linux)."
+    "UseMinimalApis": {
+      "type": "computed",
+      "value": "(!UseController)"
     },
     "fcaRepositoryUrl": {
       "type": "generated",
@@ -88,35 +86,33 @@
           "condition": "(UseLocalDB)",
           "exclude": [
             "src/Infrastructure/Data/OracleMigrations/**",
-            "src/API/appsettings.Oracle.json",
-            "tests/Application.FunctionalTests/OracleTestDatabase.cs"
+            "src/API/appsettings.Oracle.json"
           ]
         },
         {
           "condition": "(UseOracle)",
           "exclude": [
             "src/Infrastructure/Data/Migrations/**",
-            "src/API/appsettings.json",
-            "tests/Application.FunctionalTests/SqlServerTestDatabase.cs",
-            "tests/Application.FunctionalTests/TestcontainersTestDatabase.cs"
+            "src/API/appsettings.json"
           ],
           "rename": {
             "src/Infrastructure/Data/OracleMigrations/": "src/Infrastructure/Data/Migrations/",
-            "appsettings.Oracle.json": "appsettings.json",
-            "TestDatabase.Oracle.cs": "TestDatabase.cs"
+            "appsettings.Oracle.json": "appsettings.json"
           }
         },
         {
-          "condition": "(!UseController)",
+          "condition": "(UseMinimalApis)",
           "exclude": [
-            "src/API/Controllers"
+            "src/API/Controllers/**",
+            "src/API/Infrastructure/ApiServiceCollectionExtensions"
           ]
         },
         {
-          "condition": "(!EnableContainerSupport)",
+          "condition": "(UseController)",
           "exclude": [
-            "src/API/Dockerfile",
-            ".dockerignore"
+            "src/API/Endpoints/**",
+            "src/API/Infrastructure/EndpointGroupBase.cs",
+            "src/API/Infrastructure/EndpointRouteBuilderExtensions"
           ]
         }
       ]
