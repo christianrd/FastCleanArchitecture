@@ -1,6 +1,5 @@
 ﻿using FastCleanArchitecture.Domain.TodoItems;
 using FastCleanArchitecture.Domain.TodoLists;
-using Microsoft.EntityFrameworkCore;
 
 namespace FastCleanArchitecture.Infrastructure.Data.Repositories;
 

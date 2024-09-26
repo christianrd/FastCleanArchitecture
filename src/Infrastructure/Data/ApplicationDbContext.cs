@@ -1,6 +1,5 @@
 ﻿using FastCleanArchitecture.Domain.Common;
 using MediatR;
-using Microsoft.EntityFrameworkCore;
 
 namespace FastCleanArchitecture.Infrastructure.Data;
 

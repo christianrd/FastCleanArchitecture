@@ -1,5 +1,4 @@
-﻿using FastCleanArchitecture.Domain.Common;
-using FastCleanArchitecture.Domain.TodoItems;
+﻿using FastCleanArchitecture.Domain.TodoItems;
 using FastCleanArchitecture.Domain.TodoLists.ValueObjects;
 
 namespace FastCleanArchitecture.Domain.TodoLists;

@@ -1,5 +1,4 @@
-﻿using FastCleanArchitecture.Domain.Common;
-using FastCleanArchitecture.Domain.Exceptions;
+﻿using FastCleanArchitecture.Domain.Exceptions;
 
 namespace FastCleanArchitecture.Domain.TodoLists.ValueObjects;
 

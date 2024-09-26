@@ -1,7 +1,6 @@
 ﻿using FastCleanArchitecture.Domain.TodoItems;
 using FastCleanArchitecture.Domain.TodoLists;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 

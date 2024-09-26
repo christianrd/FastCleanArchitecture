@@ -1,7 +1,6 @@
 using FastCleanArchitecture.Application.Common.Messaging;
 using FastCleanArchitecture.Domain.Common;
 using FastCleanArchitecture.Domain.TodoItems;
-using FluentResults;
 
 namespace FastCleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem;
 

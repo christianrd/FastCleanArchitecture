@@ -1,5 +1,4 @@
 ﻿using FastCleanArchitecture.Domain.Common;
-using Microsoft.EntityFrameworkCore;
 
 namespace FastCleanArchitecture.Infrastructure.Data.Repositories;
 

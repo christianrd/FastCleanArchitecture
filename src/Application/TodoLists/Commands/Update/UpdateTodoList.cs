@@ -1,7 +1,6 @@
 using FastCleanArchitecture.Application.Common.Messaging;
 using FastCleanArchitecture.Domain.Common;
 using FastCleanArchitecture.Domain.TodoLists;
-using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace FastCleanArchitecture.Application.TodoLists.Commands.Update;

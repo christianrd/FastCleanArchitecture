@@ -1,5 +1,4 @@
 ﻿using FastCleanArchitecture.Domain.TodoLists;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FastCleanArchitecture.Infrastructure.Data.Configurations;

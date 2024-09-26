@@ -1,5 +1,4 @@
 ﻿using FastCleanArchitecture.Domain.TodoItems;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace FastCleanArchitecture.Infrastructure.Data.Configurations;

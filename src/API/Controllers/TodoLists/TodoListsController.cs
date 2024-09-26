@@ -1,10 +1,7 @@
-﻿using Asp.Versioning;
-using FastCleanArchitecture.Application.TodoLists.Commands.Create;
+﻿using FastCleanArchitecture.Application.TodoLists.Commands.Create;
 using FastCleanArchitecture.Application.TodoLists.Commands.Delete;
 using FastCleanArchitecture.Application.TodoLists.Commands.Update;
 using FastCleanArchitecture.Application.TodoLists.Queries.GetTodos;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
 
 namespace FastCleanArchitecture.API.Controllers.TodoLists;
 

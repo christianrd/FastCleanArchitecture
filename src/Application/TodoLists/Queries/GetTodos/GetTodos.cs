@@ -2,7 +2,6 @@ using FastCleanArchitecture.Application.Common.Messaging;
 using FastCleanArchitecture.Application.Common.Models;
 using FastCleanArchitecture.Domain.TodoItems.Enums;
 using FastCleanArchitecture.Domain.TodoLists;
-using FluentResults;
 using Mapster;
 
 namespace FastCleanArchitecture.Application.TodoLists.Queries.GetTodos;

@@ -1,9 +1,6 @@
-﻿using Asp.Versioning;
-using FastCleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
+﻿using FastCleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
 using FastCleanArchitecture.Application.TodoItems.Commands.DeleteTodoItem;
 using FastCleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
 
 namespace FastCleanArchitecture.API.Controllers.TodoItems;
 

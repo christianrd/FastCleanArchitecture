@@ -1,9 +1,7 @@
-﻿using Application.IntegrationTests.Infrastructure;
-using FastCleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
+﻿using FastCleanArchitecture.Application.TodoItems.Commands.CreateTodoItem;
 using FastCleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem;
 using FastCleanArchitecture.Application.TodoLists.Commands.Create;
 using FastCleanArchitecture.Domain.TodoItems;
-using FluentAssertions;
 
 namespace Application.IntegrationTests.TodoItems.Commands;
 

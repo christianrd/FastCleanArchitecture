@@ -1,7 +1,6 @@
 ﻿using FastCleanArchitecture.Application.Common.Messaging;
 using FastCleanArchitecture.Domain.Common;
 using FastCleanArchitecture.Domain.TodoLists;
-using FluentResults;
 
 namespace FastCleanArchitecture.Application.TodoLists.Commands.Create;
 

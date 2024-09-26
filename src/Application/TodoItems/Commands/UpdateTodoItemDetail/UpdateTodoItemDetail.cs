@@ -2,7 +2,6 @@ using FastCleanArchitecture.Application.Common.Messaging;
 using FastCleanArchitecture.Domain.Common;
 using FastCleanArchitecture.Domain.TodoItems;
 using FastCleanArchitecture.Domain.TodoItems.Enums;
-using FluentResults;
 using Microsoft.AspNetCore.Mvc;
 using static FastCleanArchitecture.Application.TodoItems.Commands.UpdateTodoItem.UpdateTodoItemCommand;
 

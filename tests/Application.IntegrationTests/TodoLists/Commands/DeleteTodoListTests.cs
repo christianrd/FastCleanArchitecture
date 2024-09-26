@@ -1,8 +1,6 @@
-﻿using Application.IntegrationTests.Infrastructure;
-using FastCleanArchitecture.Application.TodoLists.Commands.Create;
+﻿using FastCleanArchitecture.Application.TodoLists.Commands.Create;
 using FastCleanArchitecture.Application.TodoLists.Commands.Delete;
 using FastCleanArchitecture.Domain.TodoLists;
-using FluentAssertions;
 
 namespace Application.IntegrationTests.TodoLists.Commands;
 

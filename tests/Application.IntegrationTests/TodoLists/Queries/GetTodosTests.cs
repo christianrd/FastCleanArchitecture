@@ -1,6 +1,4 @@
-﻿using Application.IntegrationTests.Infrastructure;
-using FastCleanArchitecture.Application.TodoLists.Queries.GetTodos;
-using FluentAssertions;
+﻿using FastCleanArchitecture.Application.TodoLists.Queries.GetTodos;
 
 namespace Application.IntegrationTests.TodoLists.Queries;
 

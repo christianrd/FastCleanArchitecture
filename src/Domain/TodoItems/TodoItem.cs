@@ -1,5 +1,4 @@
-﻿using FastCleanArchitecture.Domain.Common;
-using FastCleanArchitecture.Domain.TodoItems.Enums;
+﻿using FastCleanArchitecture.Domain.TodoItems.Enums;
 using FastCleanArchitecture.Domain.TodoItems.Events;
 
 namespace FastCleanArchitecture.Domain.TodoItems;

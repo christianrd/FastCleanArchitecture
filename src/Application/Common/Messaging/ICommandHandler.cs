@@ -1,5 +1,4 @@
-﻿using FluentResults;
-using MediatR;
+﻿using MediatR;
 
 namespace FastCleanArchitecture.Application.Common.Messaging;
 

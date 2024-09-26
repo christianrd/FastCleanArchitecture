@@ -5,7 +5,6 @@ using FastCleanArchitecture.Infrastructure.Data;
 using FastCleanArchitecture.Infrastructure.Data.Repositories;
 using FastCleanArchitecture.Infrastructure.Middleware;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -24,9 +23,9 @@ public static class DependencyInjection
 #if (UseOracle)
             options.UseOracle(connectionString);
 #else
-            options.UseSqlServer(connectionString, options =>
+            options.UseSqlServer(connectionString, optionsBuilder =>
             {
-                options.EnableRetryOnFailure(
+                optionsBuilder.EnableRetryOnFailure(
                     maxRetryCount: 3,
                     maxRetryDelay: TimeSpan.FromSeconds(10),
                     errorNumbersToAdd: null);
@@ -51,7 +50,7 @@ public static class DependencyInjection
         app.UseCustomExceptionHandler();
     }
 
-    internal static void UseCustomExceptionHandler(this IApplicationBuilder app)
+    private static void UseCustomExceptionHandler(this IApplicationBuilder app)
     {
         app.UseMiddleware<ExceptionHandlingMiddleware>();
     }

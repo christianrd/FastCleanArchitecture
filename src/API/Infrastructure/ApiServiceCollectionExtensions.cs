@@ -1,7 +1,4 @@
-﻿using Asp.Versioning;
-using Microsoft.AspNetCore.Mvc;
-
-namespace FastCleanArchitecture.API.Infrastructure;
+﻿namespace FastCleanArchitecture.API.Infrastructure;
 
 internal static class ApiServiceCollectionExtensions
 {
